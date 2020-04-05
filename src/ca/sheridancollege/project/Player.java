@@ -11,7 +11,8 @@ package ca.sheridancollege.project;
  */
 public abstract class Player 
 {
-    private String playerID; //the unique ID for this player
+    private String playerID;
+	private Hand playerHand; //the unique ID for this player
     
     /**
      * A constructor that allows you to set the player's unique ID
@@ -44,5 +45,20 @@ public abstract class Player
      * with your specific type of Player and filled in with logic to play your game.
      */
     public abstract void play();
+
+	public int getMoney() {
+		// TODO - implement Player.getMoney
+		throw new UnsupportedOperationException();
+	}
+
+	public int getCardSum() {
+		// TODO - implement Player.getCardSum
+		throw new UnsupportedOperationException();
+	}
+
+	public Card hit() {
+		// TODO - implement Player.hit
+		throw new UnsupportedOperationException();
+	}
     
 }
