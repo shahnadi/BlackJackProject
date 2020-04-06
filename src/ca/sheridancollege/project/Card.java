@@ -22,5 +22,19 @@ public abstract class Card
     
     @Override
     public abstract String toString();
+
+	public Card() {
+		// TODO - implement Card.Card
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * 
+	 * @param cardNum
+	 */
+	public Card(CardNum cardNum) {
+		// TODO - implement Card.Card
+		throw new UnsupportedOperationException();
+	}
     
 }
