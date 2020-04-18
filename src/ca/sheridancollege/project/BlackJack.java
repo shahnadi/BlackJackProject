@@ -1,5 +1,6 @@
 package ca.sheridancollege.project;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BlackJack extends Game{
@@ -19,7 +20,14 @@ public class BlackJack extends Game{
                 Bet bet = new Bet(playerBet);
                 System.out.println("Let's start!");
                 deck.shuffle();
-//                Card card = new Card();
+                ArrayList<Card> shuffled_deck = deck.getDeck();
+                ArrayList<Card> player_cards = new ArrayList<>();
+                player_cards.add(shuffled_deck.get(0));
+                player_cards.add(shuffled_deck.get(1));
+                
+                Hand player_hand = new Hand(player_cards);
+                player.setHand(player_hand);
+                
                 
                 
 	}
