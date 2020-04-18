@@ -39,12 +39,17 @@ public class GroupOfCards
      */
     public ArrayList<Card> showCards()
     {
+        shuffle();
         return deck;
     }
     
     public void shuffle()
     {
         Collections.shuffle(deck);
+    }
+
+    ArrayList<Card> getDeck() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
    
