@@ -1,34 +1,39 @@
 package ca.sheridancollege.project;
 
 import ca.sheridancollege.project.*;
+import java.util.ArrayList;
 
 public class Hand {
 
-	private int numOfCards;
-	private Card[] card;
+    private int numOfCards;
+    private Card[] card;
 
-	public int getNumOfCards() {
-		return this.numOfCards;
-	}
+    public Hand(ArrayList<Card> cards) {
 
-	/**
-	 * 
-	 * @param numOfCards
-	 */
-	public void setNumOfCards(int numOfCards) {
-		this.numOfCards = numOfCards;
-	}
+    }
 
-	public Card[] getCard() {
-		return this.card;
-	}
+    public int getNumOfCards() {
+        return this.numOfCards;
+    }
 
-	/**
-	 * 
-	 * @param card
-	 */
-	public void setCard(Card[] card) {
-		this.card = card;
-	}
+    /**
+     *
+     * @param numOfCards
+     */
+    public void setNumOfCards(int numOfCards) {
+        this.numOfCards = numOfCards;
+    }
+
+    public Card[] getCard() {
+        return this.card;
+    }
+
+    /**
+     *
+     * @param card
+     */
+    public void setCard(Card[] card) {
+        this.card = card;
+    }
 
 }
