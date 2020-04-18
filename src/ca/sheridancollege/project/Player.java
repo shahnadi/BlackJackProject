@@ -56,4 +56,9 @@ public class Player {
         throw new UnsupportedOperationException();
     }
 
+    public void setHand(Hand player_hand) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
 }
