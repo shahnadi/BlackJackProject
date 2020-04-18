@@ -5,6 +5,8 @@
  */
 package ca.sheridancollege.project;
 
+import java.util.ArrayList;
+
 /**
  * A class that models each Player in the game. Players have an identifier,
  * which should be unique.
@@ -57,8 +59,24 @@ public class Player {
     }
 
     public void setHand(Hand player_hand) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.playerHand = player_hand;
+    }
+    
+    public void showOneCard() {
+        ArrayList<Card> finalHand = this.playerHand.getCard();
+        System.out.println("The dealer has following cards");
+        Card card = finalHand.get(0);
+        System.out.println(card.toString());
+
     }
 
+    public void showCards() {
+        ArrayList<Card> finalHand = this.playerHand.getCard();
+        System.out.println("You have the following cards");
+        for (int i = 0; i < finalHand.size(); i++) {
+            Card card = finalHand.get(i);
+            System.out.println(card.toString());
+        }
+    }
 
 }

@@ -6,10 +6,10 @@ import java.util.ArrayList;
 public class Hand {
 
     private int numOfCards;
-    private Card[] card;
+    private ArrayList<Card> card;
 
     public Hand(ArrayList<Card> cards) {
-
+        this.card = cards;
     }
 
     public int getNumOfCards() {
@@ -24,7 +24,7 @@ public class Hand {
         this.numOfCards = numOfCards;
     }
 
-    public Card[] getCard() {
+    public ArrayList<Card> getCard() {
         return this.card;
     }
 
@@ -32,7 +32,7 @@ public class Hand {
      *
      * @param card
      */
-    public void setCard(Card[] card) {
+    public void setCard(ArrayList<Card> card) {
         this.card = card;
     }
 

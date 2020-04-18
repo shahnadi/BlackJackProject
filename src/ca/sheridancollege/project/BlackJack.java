@@ -19,6 +19,7 @@ public class BlackJack extends Game{
                 int playerBet = in.nextInt();
                 Bet bet = new Bet(playerBet);
                 System.out.println("Let's start!");
+                
                 deck.shuffle();
                 ArrayList<Card> shuffled_deck = deck.getDeck();
                 ArrayList<Card> player_cards = new ArrayList<>();
@@ -27,6 +28,19 @@ public class BlackJack extends Game{
                 
                 Hand player_hand = new Hand(player_cards);
                 player.setHand(player_hand);
+                player.showCards();
+                
+                deck.shuffle();
+                shuffled_deck=deck.getDeck();
+                Player dealer = new Player("Matthew");
+                ArrayList<Card> dealer_cards = new ArrayList<>();
+                dealer_cards.add(shuffled_deck.get(2));
+                dealer_cards.add(shuffled_deck.get(3));
+                Hand dealer_hand = new Hand(player_cards);
+                dealer.setHand(dealer_hand);
+                dealer.showOneCard();
+                
+                
                 
                 
                 

@@ -24,11 +24,12 @@ public class GroupOfCards
         int j = 0;
         for (int i = 0; i < 52; i++) {
             
-                if(j%4==0){
+                if(i%4==0){
                     j++;
                 }
                 Card card = new Card(j);
                 deck.add(card);
+//                System.out.println(i+", "+j+", "+card);
             
         }
     }
@@ -37,19 +38,15 @@ public class GroupOfCards
      * A method that will get the group of cards as an ArrayList
      * @return the group of cards.
      */
-    public ArrayList<Card> showCards()
+    public ArrayList<Card> getDeck()
     {
-        shuffle();
+        Collections.shuffle(deck);
         return deck;
     }
     
     public void shuffle()
     {
         Collections.shuffle(deck);
-    }
-
-    ArrayList<Card> getDeck() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
    
