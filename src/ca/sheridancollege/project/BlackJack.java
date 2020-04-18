@@ -1,23 +1,31 @@
 package ca.sheridancollege.project;
 
+
+
 public class BlackJack extends Game {
 
-	/**
-	 * 
-	 * @param String
-	 */
-	public void main(int[] String) {
-		// TODO - implement BlackJack.main
-		throw new UnsupportedOperationException();
-	}
+ 
+
+    /**
+     *
+     * @param args
+     *
+     */
+    public static void main(String[] args) {
+        
+    }
+
+
+    
         ///devansh addedd
 	/**
 	 * 
 	 * @param player
-	 */
+	*/
 	public BlackJack(Player player) {
 		// TODO - implement BlackJack.BlackJack
-		throw new UnsupportedOperationException();
+
+        this.player = player;
 	}
 
         @Override
@@ -46,5 +54,6 @@ public class BlackJack extends Game {
 		// TODO - implement BlackJack.calculateSum
 		throw new UnsupportedOperationException();
 	}
+    
 
 }
