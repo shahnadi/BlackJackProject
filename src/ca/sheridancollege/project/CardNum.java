@@ -19,7 +19,7 @@ public enum CardNum {
 	private String name;
 
 	public int getNum() {
-		return this.num;
+            return num;
 	}
 
 	/**
