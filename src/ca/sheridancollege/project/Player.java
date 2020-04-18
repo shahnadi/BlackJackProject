@@ -6,59 +6,54 @@
 package ca.sheridancollege.project;
 
 /**
- * A class that models each Player in the game. Players have an identifier, which should be unique.
+ * A class that models each Player in the game. Players have an identifier,
+ * which should be unique.
+ *
  * @author dancye
  */
-public abstract class Player 
-{
+public class Player {
+
     private String playerID;
-	private Hand playerHand; //the unique ID for this player
-    
+    private Hand playerHand; //the unique ID for this player
+
     /**
      * A constructor that allows you to set the player's unique ID
+     *
      * @param name the unique ID to assign to this player.
      */
-    public Player(String name)
-    {
-        playerID= name;
+    public Player(String name) {
+        playerID = name;
     }
-    
+
     /**
      * @return the playerID
      */
-    public String getPlayerID() 
-    {
+    public String getPlayerID() {
         return playerID;
     }
 
     /**
      * Ensure that the playerID is unique
+     *
      * @param givenID the playerID to set
      */
-    public void setPlayerID(String givenID) 
-    {
+    public void setPlayerID(String givenID) {
         playerID = givenID;
     }
-    
-    /**
-     * The method to be instantiated when you subclass the Player class
-     * with your specific type of Player and filled in with logic to play your game.
-     */
-    public abstract void play();
 
-	public int getMoney() {
-		// TODO - implement Player.getMoney
-		throw new UnsupportedOperationException();
-	}
+    public int getMoney() {
+        // TODO - implement Player.getMoney
+        throw new UnsupportedOperationException();
+    }
 
-	public int getCardSum() {
-		// TODO - implement Player.getCardSum
-		throw new UnsupportedOperationException();
-	}
+    public int getCardSum() {
+        // TODO - implement Player.getCardSum
+        throw new UnsupportedOperationException();
+    }
 
-	public Card hit() {
-		// TODO - implement Player.hit
-		throw new UnsupportedOperationException();
-	}
-    
+    public Card hit() {
+        // TODO - implement Player.hit
+        throw new UnsupportedOperationException();
+    }
+
 }

@@ -5,9 +5,8 @@ public class Bet {
 	private int initialBet;
 	private int finalBet;
 
-	public Bet() {
-		// TODO - implement Bet.Bet
-		throw new UnsupportedOperationException();
+	public Bet(int num) {
+		this.initialBet = num;
 	}
 
 	public int getInitialBet() {
