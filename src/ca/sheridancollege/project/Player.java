@@ -12,7 +12,7 @@ package ca.sheridancollege.project;
  * @author dancye
  */
 public class Player {
-
+    //var created
     private String playerID;
     private Hand playerHand; //the unique ID for this player
 
