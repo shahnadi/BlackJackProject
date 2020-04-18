@@ -49,8 +49,14 @@ public class Player {
     }
 
     public int getCardSum() {
-        // TODO - implement Player.getCardSum
-        throw new UnsupportedOperationException();
+       ArrayList<Card> finalHand = this.playerHand.getCard();
+        int sum = 0;
+        for (int i = 0; i < finalHand.size(); i++) {
+            Card card = finalHand.get(i);
+            
+            sum+=card.getVal();
+        }
+        return sum;
     }
 
     public Card hit() {
@@ -75,8 +81,23 @@ public class Player {
         System.out.println("You have the following cards");
         for (int i = 0; i < finalHand.size(); i++) {
             Card card = finalHand.get(i);
+            card.checkVal();
             System.out.println(card.toString());
         }
     }
+
+    void beginGame() {
+                GroupOfCards deck = new GroupOfCards();
+                deck.shuffle();
+                ArrayList<Card> shuffled_deck = deck.getDeck();
+                ArrayList<Card> player_cards = new ArrayList<>();
+                player_cards.add(shuffled_deck.get(0));
+                player_cards.add(shuffled_deck.get(1));
+               
+                Hand player_hand = new Hand(player_cards);
+                setHand(player_hand);
+                
+    }
+   
 
 }
