@@ -1,6 +1,5 @@
 package ca.sheridancollege.project;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BlackJack extends Game {
@@ -24,11 +23,18 @@ public class BlackJack extends Game {
                     + "n for no");
             String choice = in.next();
             if ("y".equals(choice)) {
+                bet.setInitialBet(playerBet);
                 if (startRound(player)) {
                     System.out.println("Congratulations, You WON the Round " + i);
+                    playerBet = bet.calculateWinnings(playerBet);
+                    System.out.println("You have now $" + playerBet);
+                } else {
+                    bet.setInitialBet(playerBet / 2);
                 }
                 i++;
-            } else {
+            } else if ("n".equals(choice)) {
+
+                System.out.println("Now, you have $" + bet.getInitialBet());
                 break;
             }
         } while (true);
@@ -77,6 +83,7 @@ public class BlackJack extends Game {
                     player.showCards();
                     System.out.println("The new sum of your Cards is: " + player.getCardSum());
                     if (player.getCardSum() > 21) {
+                        System.out.println("Sorry, You LOST this Round!");
                         return false;
                     } else if (player.getCardSum() == 21) {
                         return true;
@@ -86,16 +93,51 @@ public class BlackJack extends Game {
                     dealer.showCards();
 
                     while (dealer.getCardSum() <= 16) {
-                        if (dealer.getCardSum() == 21) {
-                            
-                            return false;
-                        } else if (dealer.getCardSum() <= 16) {
-                            dealer.hit();
 
+                        if (dealer.getCardSum() == 21) {
                             System.out.println("The dealer has the following cards:");
                             dealer.showCards();
-                        } else if (dealer.getCardSum() > 21) {
+                            System.out.println("The new sum of the dealer's cards is: " + dealer.getCardSum());
+                        } else if (dealer.getCardSum() <= 16) {
+                            dealer.hit();
+                            System.out.println("The dealer has the following cards:");
                             dealer.showCards();
+                            System.out.println("The new sum of the dealer's cards is: " + dealer.getCardSum());
+                        } else if (dealer.getCardSum() > 21) {
+                            System.out.println("The dealer has the following cards:");
+                            dealer.showCards();
+                            System.out.println("The new sum of the dealer's cards is: " + dealer.getCardSum());
+                            System.out.println("Congratulations, You WON this Round!");
+                            return true;
+                        }
+                    }
+                    if (dealer.getCardSum() >= 17) {
+                        
+                        if (dealer.getCardSum() < player.getCardSum()) {
+                            System.out.println("The dealer has the following cards:");
+                            dealer.showCards();
+                            System.out.println("The sum of the dealer's cards is: " + dealer.getCardSum());
+
+                            System.out.println("You has the following cards:");
+                            player.showCards();
+                            System.out.println("The sum of your cards is: " + player.getCardSum());
+                            System.out.println("Sorry, You LOST this Round!");
+                            return false;
+                        } else if (dealer.getCardSum() == player.getCardSum()) {
+                            System.out.println("It is a DRAW");
+                            return false;
+                        } else if (dealer.getCardSum() == 21 && player.getCardSum() == 21) {
+                            System.out.println("It is a DRAW");
+                            return false;
+                        } else {
+                            System.out.println("The dealer has the following cards:");
+                            dealer.showCards();
+                            System.out.println("The sum of the dealer's cards is: " + dealer.getCardSum());
+
+                            System.out.println("You has the following cards:");
+                            player.showCards();
+                            System.out.println("The sum of your cards is: " + player.getCardSum());
+                            System.out.println("Congratulations, You WON this Round!");
                             return true;
                         }
                     }
@@ -114,9 +156,6 @@ public class BlackJack extends Game {
 
     }
 
-    @Override
-    public void DeclareWinner(Player player) {
 
-    }
 
 }

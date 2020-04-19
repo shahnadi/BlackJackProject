@@ -10,7 +10,7 @@ import java.util.ArrayList;
 /**
  * The class that models your game. You should create a more specific
  * child of this class and instantiate the methods given.
- * @author dancye
+ * @author Devansh,Nadir and Asim
  */
 public abstract class Game 
 {
@@ -53,12 +53,7 @@ public abstract class Game
      */
     public abstract void play();
 
-    /**
-     * When the game is over, use this method to declare and display a winning
-     * player.
-     * @param player
-     */
-    public abstract void DeclareWinner(Player player);
+    
 
    
     

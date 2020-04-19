@@ -43,6 +43,10 @@ public class Card {
     }
 
     ;
+
+    public int getNum() {
+        return num;
+    }
     
     public Card(int cardNum) {
         this.num = cardNum;
@@ -62,20 +66,15 @@ public class Card {
     }
 
     public void checkVal() {
-        if(num == 1)
-            value =11;
+        if (num == 1) {
+            value=1;
+        }
         if (num > 10) {
             value = 10;
         } else {
             value = num;
         }
         setValue(value);
-    }
-
-    public CardNum getName(int index) {
-
-        CardNum s = CardNum.values()[index - 1];
-        return s;
     }
 
     public void ifAce() {
@@ -88,4 +87,11 @@ public class Card {
         }
         setValue(val);
     }
+
+    public CardNum getName(int index) {
+
+        CardNum s = CardNum.values()[index - 1];
+        return s;
+    }
+
 }

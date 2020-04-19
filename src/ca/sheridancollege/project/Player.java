@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * A class that models each Player in the game. Players have an identifier,
  * which should be unique.
  *
- * @author dancye
+ * @author Devansh,Nadir and Asim
  */
 public class Player {
 
@@ -66,10 +66,11 @@ public class Player {
         deck.shuffle();
         ArrayList<Card> shuffled_deck = deck.getDeck();
         Card card = shuffled_deck.get(0);
-        if(card.getVal() == 1)
-        card.ifAce();
+        if (card.getVal() == 1) {
+            card.ifAce();
+        }
         finalHand.add(card);
-        
+
         this.playerHand.setCard(finalHand);
     }
 
@@ -88,6 +89,7 @@ public class Player {
 
     public void showCards() {
         ArrayList<Card> finalHand = this.playerHand.getCard();
+
         for (int i = 0; i < finalHand.size(); i++) {
             Card card = finalHand.get(i);
             card.checkVal();
@@ -100,8 +102,14 @@ public class Player {
         deck.shuffle();
         ArrayList<Card> shuffled_deck = deck.getDeck();
         ArrayList<Card> player_cards = new ArrayList<>();
-        player_cards.add(shuffled_deck.get(0));
-        player_cards.add(shuffled_deck.get(1));
+        for (int i = 0; i < 2; i++) {
+            Card card = shuffled_deck.get(i);
+            if(card.getNum() == 1)
+                card.setValue(11);
+
+            player_cards.add(card);
+            
+        }
 
         Hand player_hand = new Hand(player_cards);
         setHand(player_hand);
