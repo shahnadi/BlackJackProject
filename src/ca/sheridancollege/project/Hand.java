@@ -2,7 +2,10 @@ package ca.sheridancollege.project;
 
 import ca.sheridancollege.project.*;
 import java.util.ArrayList;
-
+/*
+*
+*@author Devansh,Nadir and Asim
+*/
 public class Hand {
 
     private int numOfCards;

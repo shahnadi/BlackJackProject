@@ -55,7 +55,7 @@ public class Player {
         for (int i = 0; i < finalHand.size(); i++) {
             Card card = finalHand.get(i);
 
-            sum += card.getVal();
+            sum += card.getValue();
         }
         return sum;
     }
@@ -66,7 +66,7 @@ public class Player {
         deck.shuffle();
         ArrayList<Card> shuffled_deck = deck.getDeck();
         Card card = shuffled_deck.get(0);
-        if (card.getVal() == 1) {
+        if (card.getValue() == 1) {
             card.ifAce();
         }
         finalHand.add(card);
@@ -104,9 +104,6 @@ public class Player {
         ArrayList<Card> player_cards = new ArrayList<>();
         for (int i = 0; i < 2; i++) {
             Card card = shuffled_deck.get(i);
-            if(card.getNum() == 1)
-                card.setValue(11);
-
             player_cards.add(card);
             
         }

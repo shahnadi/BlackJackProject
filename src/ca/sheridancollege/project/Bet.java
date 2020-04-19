@@ -1,5 +1,8 @@
 package ca.sheridancollege.project;
-
+/*
+*
+*@author Devansh,Nadir and Asim
+*/
 public class Bet {
 
     private int initialBet;

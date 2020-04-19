@@ -13,7 +13,7 @@ import java.util.Collections;
  * might want to subclass this more than once. The group of cards has a maximum
  * size attribute which is flexible for reuse.
  *
- * @author dancye
+ * @author Devansh,Nadir and Asim
  */
 public class GroupOfCards {
 
@@ -29,7 +29,6 @@ public class GroupOfCards {
             }
             Card card = new Card(j);
             deck.add(card);
-//                System.out.println(i+", "+j+", "+card);
 
         }
     }
@@ -43,8 +42,6 @@ public class GroupOfCards {
         shuffle();
         return deck;
     }
-
-   
 
     public void shuffle() {
         Collections.shuffle(deck);

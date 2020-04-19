@@ -1,7 +1,11 @@
 package ca.sheridancollege.project;
 
 import java.util.Scanner;
-
+/**
+ * This program will be creating the BlackJack game. 
+ *
+ * @author Devansh,Nadir and Asim
+ */
 public class BlackJack extends Game {
 
     /**
@@ -29,7 +33,9 @@ public class BlackJack extends Game {
                     playerBet = bet.calculateWinnings(playerBet);
                     System.out.println("You have now $" + playerBet);
                 } else {
+                    playerBet = playerBet/2;
                     bet.setInitialBet(playerBet / 2);
+                    System.out.println("You have now $" + playerBet);
                 }
                 i++;
             } else if ("n".equals(choice)) {
@@ -43,14 +49,6 @@ public class BlackJack extends Game {
 
     public BlackJack(String givenName) {
         super(givenName);
-    }
-
-    /**
-     *
-     */
-    @Override
-    public void play() {
-
     }
 
     public static boolean checkWinner(Player player) {
@@ -111,25 +109,8 @@ public class BlackJack extends Game {
                             return true;
                         }
                     }
-                    if (dealer.getCardSum() >= 17) {
-                        
+                    if (dealer.getCardSum() >= 17) {                        
                         if (dealer.getCardSum() < player.getCardSum()) {
-                            System.out.println("The dealer has the following cards:");
-                            dealer.showCards();
-                            System.out.println("The sum of the dealer's cards is: " + dealer.getCardSum());
-
-                            System.out.println("You has the following cards:");
-                            player.showCards();
-                            System.out.println("The sum of your cards is: " + player.getCardSum());
-                            System.out.println("Sorry, You LOST this Round!");
-                            return false;
-                        } else if (dealer.getCardSum() == player.getCardSum()) {
-                            System.out.println("It is a DRAW");
-                            return false;
-                        } else if (dealer.getCardSum() == 21 && player.getCardSum() == 21) {
-                            System.out.println("It is a DRAW");
-                            return false;
-                        } else {
                             System.out.println("The dealer has the following cards:");
                             dealer.showCards();
                             System.out.println("The sum of the dealer's cards is: " + dealer.getCardSum());
@@ -139,6 +120,19 @@ public class BlackJack extends Game {
                             System.out.println("The sum of your cards is: " + player.getCardSum());
                             System.out.println("Congratulations, You WON this Round!");
                             return true;
+                        } else if (dealer.getCardSum() == player.getCardSum()) {
+                            System.out.println("It is a DRAW");
+                            return false;
+                        } else if(dealer.getCardSum() > player.getCardSum()) {
+                            System.out.println("The dealer has the following cards:");
+                            dealer.showCards();
+                            System.out.println("The sum of the dealer's cards is: " + dealer.getCardSum());
+
+                            System.out.println("You has the following cards:");
+                            player.showCards();
+                            System.out.println("The sum of your cards is: " + player.getCardSum());
+                            System.out.println("Sorry, You LOST this Round!");
+                            return false;
                         }
                     }
 
@@ -151,11 +145,5 @@ public class BlackJack extends Game {
         }
         return false;
     }
-
-    public void endRound() {
-
-    }
-
-
 
 }

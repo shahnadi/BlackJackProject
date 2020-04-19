@@ -12,7 +12,7 @@ import java.util.Scanner;
  * enough to be instantiated for any Card game. Students wishing to add to the
  * code should remember to add themselves as a modifier.
  *
- * @author dancye
+ * @author Devansh,Nadir and Asim
  */
 public class Card {
     //default modifier for child classes
@@ -24,50 +24,25 @@ public class Card {
         this.value = value;
     }
 
-    /**
-     * Students should implement this method for their specific children classes
-     *
-     * @return a String representation of a card. Could be an UNO card, a
-     * regular playing card etc.
-     */
-    @Override
-    public String toString() {
-
-        System.out.print("A card: " + getName(num));
-        String format = " of value: %d";
-        if (num != 1) {
-            return String.format(format, getVal());
-        } else {
-            return "";
-        }
+    public int getValue() {
+        return value;
     }
-
-    ;
 
     public int getNum() {
         return num;
     }
-    
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
     public Card(int cardNum) {
         this.num = cardNum;
     }
 
-    /**
-     *
-     * @param cardNum
-     */
-    public Card(CardNum cardNum) {
-
-    }
-
-    public int getVal() {
-
-        return value;
-    }
-
     public void checkVal() {
         if (num == 1) {
-            value=1;
+            value = 11;
         }
         if (num > 10) {
             value = 10;
@@ -92,6 +67,24 @@ public class Card {
 
         CardNum s = CardNum.values()[index - 1];
         return s;
+    }
+
+    /**
+     * Students should implement this method for their specific children classes
+     *
+     * @return a String representation of a card. Could be an UNO card, a
+     * regular playing card etc.
+     */
+    @Override
+    public String toString() {
+
+        System.out.print("A card: " + getName(num));
+        String format = " of value: %d";
+        if (num != 1) {
+            return String.format(format, getValue());
+        } else {
+            return "";
+        }
     }
 
 }
