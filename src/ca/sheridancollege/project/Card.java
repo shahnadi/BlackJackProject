@@ -38,7 +38,7 @@ public class Card {
         if (num != 1) {
             return String.format(format, getVal());
         } else {
-            return null;
+            return "";
         }
     }
 
@@ -62,15 +62,14 @@ public class Card {
     }
 
     public void checkVal() {
-        if (num == 1) {
-            ifAce();
-        }
+        if(num == 1)
+            value =11;
         if (num > 10) {
             value = 10;
         } else {
             value = num;
         }
-
+        setValue(value);
     }
 
     public CardNum getName(int index) {
