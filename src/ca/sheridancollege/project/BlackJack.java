@@ -18,17 +18,20 @@ public class BlackJack extends Game {
         System.out.print("How much would you like to bet?");
         int playerBet = in.nextInt();
         Bet bet = new Bet(playerBet);
-        System.out.println("Let's start!");
-
-        player.beginGame();
-        player.showCards();
-
-        Player dealer = new Player("Matthew");
-        dealer.beginGame();
-        dealer.showOneCard();
-        
-        System.out.println("The sum of your Cards is: "+player.getCardSum());
-        
+        int i = 1;
+        do {
+            System.out.println("Do you want to play Round " + i + ", y for yes or "
+                    + "n for no");
+            String choice = in.next();
+            if ("y".equals(choice)) {
+                if (startRound(player)) {
+                    System.out.println("Congratulations, You WON the Round " + i);
+                }
+                i++;
+            } else {
+                break;
+            }
+        } while (true);
 
     }
 
@@ -44,21 +47,57 @@ public class BlackJack extends Game {
 
     }
 
-    @Override
-    public void declareWinner() {
+    public static boolean checkWinner(Player player) {
+        return (player.getSum() == 21);
 
     }
 
-    public void startRound() {
+    public static boolean startRound(Player player) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Let's start!");
 
+        player.beginGame();
+        player.showCards();
+
+        Player dealer = new Player("Matthew");
+        dealer.beginGame();
+        dealer.showOneCard();
+
+        System.out.println("The sum of your Cards is: " + player.getCardSum());
+        if (checkWinner(player)) {
+            return true;
+
+        } else {
+            do {
+                System.out.println("Press (1) for Hit and (0) for Stand");
+                int choice = in.nextInt();
+                if (choice == 1) {
+                    player.hit();
+                    player.showCards();
+                    System.out.println("The new sum of your Cards is: " + player.getCardSum());
+                    if (player.getCardSum() > 21) {
+                        return false;
+                    } else if (player.getCardSum() == 21) {
+                        return true;
+                    }
+                }
+                if (choice == 2) {
+                    break;
+
+                }
+
+            } while (true);
+
+        }
+        return false;
     }
 
     public void endRound() {
 
     }
 
-    public int calculateSum() {
-        return 0;
+    @Override
+    public void DeclareWinner(Player player) {
 
     }
 

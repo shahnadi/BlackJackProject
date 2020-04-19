@@ -52,12 +52,13 @@ public abstract class Game
      * on your game.
      */
     public abstract void play();
-    
+
     /**
      * When the game is over, use this method to declare and display a winning
      * player.
+     * @param player
      */
-    public abstract void declareWinner();
+    public abstract void DeclareWinner(Player player);
 
    
     
