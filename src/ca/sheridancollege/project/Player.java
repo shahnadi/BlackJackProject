@@ -88,7 +88,6 @@ public class Player {
 
     public void showCards() {
         ArrayList<Card> finalHand = this.playerHand.getCard();
-        System.out.println("You have the following cards");
         for (int i = 0; i < finalHand.size(); i++) {
             Card card = finalHand.get(i);
             card.checkVal();

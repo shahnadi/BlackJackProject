@@ -73,6 +73,7 @@ public class BlackJack extends Game {
                 int choice = in.nextInt();
                 if (choice == 1) {
                     player.hit();
+                    System.out.println("You have the following cards:");
                     player.showCards();
                     System.out.println("The new sum of your Cards is: " + player.getCardSum());
                     if (player.getCardSum() > 21) {
@@ -81,7 +82,24 @@ public class BlackJack extends Game {
                         return true;
                     }
                 }
-                if (choice == 2) {
+                if (choice == 0) {
+                    dealer.showCards();
+
+                    while (dealer.getCardSum() <= 16) {
+                        if (dealer.getCardSum() == 21) {
+                            
+                            return false;
+                        } else if (dealer.getCardSum() <= 16) {
+                            dealer.hit();
+
+                            System.out.println("The dealer has the following cards:");
+                            dealer.showCards();
+                        } else if (dealer.getCardSum() > 21) {
+                            dealer.showCards();
+                            return true;
+                        }
+                    }
+
                     break;
 
                 }

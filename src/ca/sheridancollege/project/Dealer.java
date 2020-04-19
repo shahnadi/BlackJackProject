@@ -21,10 +21,7 @@ public class Dealer extends Player {
         throw new UnsupportedOperationException();
     }
 
-    public Card hit() {
-        // TODO - implement Dealer.hit
-        throw new UnsupportedOperationException();
-    }
+    
 
     public int getCardSum() {
         // TODO - implement Dealer.getCardSum
