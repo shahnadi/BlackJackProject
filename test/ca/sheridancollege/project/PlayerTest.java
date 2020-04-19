@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author aksal
+ * @author Asim, Devansh, Nadir
  */
 public class PlayerTest {
     

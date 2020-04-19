@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Asra
+ * @author Devansh, Asim, Nadir
  */
 public class CardTest {
 
